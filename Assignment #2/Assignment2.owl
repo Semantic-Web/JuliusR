@@ -1,0 +1,605 @@
+@prefix : <http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.Assignment2/rios/ontologies/2015/Accelerometer> .
+
+<http://www.Assignment2/rios/ontologies/2015/Accelerometer> rdf:type owl:Ontology ;
+                                                            
+                                                            rdfs:comment "Activity Recognition from a Single Chest-Mounted Accelerometer." .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#hasData
+
+:hasData rdf:type owl:ObjectProperty ,
+                  owl:TransitiveProperty ;
+         
+         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#hasFile
+
+:hasFile rdf:type owl:InverseFunctionalProperty ,
+                  owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#hasMeasurement
+
+:hasMeasurement rdf:type owl:ObjectProperty ,
+                         owl:TransitiveProperty .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#hasMotion
+
+:hasMotion rdf:type owl:ObjectProperty ,
+                    owl:TransitiveProperty ;
+           
+           owl:inverseOf :isMotionOf .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#hasSequence
+
+:hasSequence rdf:type owl:InverseFunctionalProperty ,
+                      owl:ObjectProperty ;
+             
+             owl:inverseOf :isSequenceOf ;
+             
+             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#isDataOf
+
+:isDataOf rdf:type owl:ObjectProperty ,
+                   owl:TransitiveProperty ;
+          
+          owl:inverseOf :hasData ;
+          
+          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#isFileOf
+
+:isFileOf rdf:type owl:ObjectProperty ,
+                   owl:TransitiveProperty ;
+          
+          owl:inverseOf :hasFile .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#isMeasurementOf
+
+:isMeasurementOf rdf:type owl:ObjectProperty ,
+                          owl:TransitiveProperty ;
+                 
+                 owl:inverseOf :hasMeasurement .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#isMotionOf
+
+:isMotionOf rdf:type owl:ObjectProperty ,
+                     owl:TransitiveProperty .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#isSequenceOf
+
+:isSequenceOf rdf:type owl:ObjectProperty ,
+                       owl:TransitiveProperty .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.Assignment2/rios/ontologies/2015/Accelerometer#hasDataSetNumber
+
+:hasDataSetNumber rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  
+                  rdfs:comment "The order number for the dataset. Starts from 1." .
+
+
+
+###  http://www.Assignment2/rios/ontologies/2015/Accelerometer#hasSequentialOrderNumber
+
+:hasSequentialOrderNumber rdf:type owl:DatatypeProperty ;
+                          
+                          rdfs:comment "Value for the sequential order of the dataset. Starts from 0." .
+
+
+
+###  http://www.Assignment2/rios/ontologies/2015/Accelerometer#hasXDataNumber
+
+:hasXDataNumber rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                
+                rdfs:comment "Value for x-variable" .
+
+
+
+###  http://www.Assignment2/rios/ontologies/2015/Accelerometer#hasYDataNumber
+
+:hasYDataNumber rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                
+                rdfs:comment "Value for y-variable" .
+
+
+
+###  http://www.Assignment2/rios/ontologies/2015/Accelerometer#hasZDataNumber
+
+:hasZDataNumber rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                
+                rdfs:comment "Value for z-variable" .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#hasCodeNumber
+
+:hasCodeNumber rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               
+               rdfs:comment """Code number for activities. They are coded in the following way; 
+  1: WorkAtComputer
+  2: StandWalkStairs
+  3: Stand
+  4: Walking
+  5: Stairs
+  6: WalkingTalking
+  7: TalkingStanding""" .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#hasDataNumber
+
+:hasDataNumber rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#hasExperimentNumber
+
+:hasExperimentNumber rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#hasFileNumber
+
+:hasFileNumber rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               
+               rdfs:comment "The order number of the file. There are 15 file in this experiment." .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.Assignment2/rios/ontologies/2015/Accelerometer#DataSets
+
+:DataSets rdf:type owl:Class ;
+          
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasYDataNumber ;
+                            owl:someValuesFrom xsd:integer
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCodeNumber ;
+                            owl:someValuesFrom xsd:integer
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFileNumber ;
+                            owl:someValuesFrom xsd:integer
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasSequentialOrderNumber ;
+                            owl:someValuesFrom xsd:integer
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasXDataNumber ;
+                            owl:someValuesFrom xsd:integer
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasZDataNumber ;
+                            owl:someValuesFrom xsd:integer
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDataSetNumber ;
+                            owl:someValuesFrom xsd:integer
+                          ] ;
+          
+          rdfs:comment "Contains instances for the first five datasets." .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#Acceleration
+
+:Acceleration rdf:type owl:Class ;
+              
+              rdfs:comment "The acceleration consists of 3 varables x ,y and z." .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#AccelerometerExperiment
+
+:AccelerometerExperiment rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasExperimentNumber ;
+                                           owl:someValuesFrom xsd:integer
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasFile ;
+                                           owl:someValuesFrom :DataFile
+                                         ] ;
+                         
+                         rdfs:comment "Each Accelerometer expriement contains a number of data files. Each data file represents one participant. This particular experiment contains 15 data files." .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#Activities
+
+:Activities rdf:type owl:Class ;
+            
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasCodeNumber ;
+                              owl:someValuesFrom xsd:integer
+                            ] ;
+            
+            rdfs:comment """Activities consists of 7 activities. They are coded in the following way; 
+  1: WorkAtComputer
+  2: StandWalkStairs
+  3: Stand
+  4: Walking
+  5: Stairs
+  6: WalkingTalking
+  7: TalkingStanding""" .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#DataFile
+
+:DataFile rdf:type owl:Class ;
+          
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFileNumber ;
+                            owl:someValuesFrom xsd:integer
+                          ] ;
+          
+          rdfs:comment "Each data file contains a number of datasets. A data represents one participant." .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#SeqentialNumber
+
+:SeqentialNumber rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasSequentialOrderNumber ;
+                                   owl:someValuesFrom xsd:integer
+                                 ] ;
+                 
+                 rdfs:comment "The sequential numbers equal the number of datasets and can range from 0 to 300,000." .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#Stairs
+
+:Stairs rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Activities ;
+        
+        rdfs:comment "Participant was Going Up\\Down Stairs" .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#Stand
+
+:Stand rdf:type owl:Class ;
+       
+       rdfs:subClassOf :Activities ;
+       
+       rdfs:comment "Participant was Standing" .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#StandWalkStairs
+
+:StandWalkStairs rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Activities ;
+                 
+                 rdfs:comment "Participant was Standing Up, Walking and Going up\\down stairs" .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#TalkingStanding
+
+:TalkingStanding rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Activities ;
+                 
+                 rdfs:comment "Participant was Talking while Standing" .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#Walking
+
+:Walking rdf:type owl:Class ;
+         
+         rdfs:subClassOf :Activities ;
+         
+         rdfs:comment "Participant was Walking" .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#WalkingTalking
+
+:WalkingTalking rdf:type owl:Class ;
+                
+                rdfs:subClassOf :Activities ;
+                
+                rdfs:comment "Participant was Walking and Talking with Someone" .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#WorkAtComputer
+
+:WorkAtComputer rdf:type owl:Class ;
+                
+                rdfs:subClassOf :Activities .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#xAcceleration
+
+:xAcceleration rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Acceleration ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasXDataNumber ;
+                                 owl:someValuesFrom xsd:integer
+                               ] .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#yAcceleration
+
+:yAcceleration rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Acceleration ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasYDataNumber ;
+                                 owl:someValuesFrom xsd:integer
+                               ] .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#zAcceleration
+
+:zAcceleration rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Acceleration ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasZDataNumber ;
+                                 owl:someValuesFrom xsd:integer
+                               ] .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.Assignment2/rios/ontologies/2015/Accelerometer#DataSet1
+
+:DataSet1 rdf:type :DataSets ,
+                   owl:NamedIndividual ;
+          
+          :hasSequentialOrderNumber 0 ;
+          
+          :hasFileNumber 1 ;
+          
+          :hasCodeNumber 1 ;
+          
+          :hasDataSetNumber 1 ;
+          
+          :hasXDataNumber 1502 ;
+          
+          :hasZDataNumber 2153 ;
+          
+          :hasYDataNumber 2215 .
+
+
+
+###  http://www.Assignment2/rios/ontologies/2015/Accelerometer#DataSet2
+
+:DataSet2 rdf:type :DataSets ,
+                   owl:NamedIndividual ;
+          
+          :hasFileNumber 1 ;
+          
+          :hasCodeNumber 1 ;
+          
+          :hasSequentialOrderNumber 1 ;
+          
+          :hasXDataNumber 1667 ;
+          
+          :hasDataSetNumber 2 ;
+          
+          :hasZDataNumber 2047 ;
+          
+          :hasYDataNumber 2072 .
+
+
+
+###  http://www.Assignment2/rios/ontologies/2015/Accelerometer#DataSet3
+
+:DataSet3 rdf:type :DataSets ,
+                   owl:NamedIndividual ;
+          
+          :hasFileNumber 1 ;
+          
+          :hasCodeNumber 1 ;
+          
+          :hasXDataNumber 1611 ;
+          
+          :hasZDataNumber 1907 ;
+          
+          :hasYDataNumber 1957 ;
+          
+          :hasSequentialOrderNumber 2 ;
+          
+          :hasDataSetNumber 3 .
+
+
+
+###  http://www.Assignment2/rios/ontologies/2015/Accelerometer#DataSet4
+
+:DataSet4 rdf:type :DataSets ,
+                   owl:NamedIndividual ;
+          
+          :hasFileNumber 1 ;
+          
+          :hasCodeNumber 1 ;
+          
+          :hasXDataNumber 1601 ;
+          
+          :hasZDataNumber 1831 ;
+          
+          :hasYDataNumber 1939 ;
+          
+          :hasSequentialOrderNumber 3 ;
+          
+          :hasDataSetNumber 4 .
+
+
+
+###  http://www.Assignment2/rios/ontologies/2015/Accelerometer#DataSet5
+
+:DataSet5 rdf:type :DataSets ,
+                   owl:NamedIndividual ;
+          
+          :hasCodeNumber 1 ;
+          
+          :hasFileNumber 1 ;
+          
+          :hasXDataNumber 1643 ;
+          
+          :hasZDataNumber 1879 ;
+          
+          :hasYDataNumber 1965 ;
+          
+          :hasSequentialOrderNumber 4 ;
+          
+          :hasDataSetNumber 5 .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#AccelerometerExperimentNumber
+
+:AccelerometerExperimentNumber rdf:type :AccelerometerExperiment ,
+                                        owl:NamedIndividual ;
+                               
+                               :hasExperimentNumber 1 .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#ActivityStairs
+
+:ActivityStairs rdf:type :Activities ,
+                         :Stairs ,
+                         owl:NamedIndividual ;
+                
+                :hasCodeNumber 5 .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#ActivityStand
+
+:ActivityStand rdf:type :Activities ,
+                        :Stand ,
+                        owl:NamedIndividual ;
+               
+               :hasCodeNumber 3 .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#ActivityStandWalkStairs
+
+:ActivityStandWalkStairs rdf:type :Activities ,
+                                  :StandWalkStairs ,
+                                  owl:NamedIndividual ;
+                         
+                         :hasCodeNumber 2 .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#ActivityTalkingStanding
+
+:ActivityTalkingStanding rdf:type :Activities ,
+                                  :TalkingStanding ,
+                                  owl:NamedIndividual ;
+                         
+                         :hasCodeNumber 7 .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#ActivityWalking
+
+:ActivityWalking rdf:type :Activities ,
+                          :Walking ,
+                          owl:NamedIndividual ;
+                 
+                 :hasCodeNumber 4 .
+
+
+
+###  http://www.semanticweb.org/rios/ontologies/2015/5/untitled-ontology-9#ActivityWalkingTalking
+
+:ActivityWalkingTalking rdf:type :Activities ,
+                                 :WalkingTalking ,
+                                 owl:NamedIndividual ;
+                        
+                        :hasCodeNumber 6 .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+
